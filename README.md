@@ -9,7 +9,10 @@ The benefit of geospatial machine learning is that every pixel is analyzed and t
 
 **Data resources, what it looks like, and what kind of preprocessing to do:**
 
-* Considering data sources from my previous workplace (5280 Geospatial), East View Geospatial (https://www.geospatialworld.net/news/east-view-geospatial-announces-training-data-library-geospatial-machine-learning/), Geoscape (https://www.geoscape.com.au/get-geoscape/)
+* City of Boulder (https://bouldercolorado.gov/open-data/city-of-boulder-building-footprints/)
+* City of Bloomington, IN (https://catalog.data.gov/dataset/building-footprint-gis-data)
+* East View Geospatial (https://www.geospatialworld.net/news/east-view-geospatial-announces-training-data-library-geospatial-machine-learning/)
+* Geoscape (https://www.geoscape.com.au/get-geoscape/)
 * Data will consist of Ortho-rectified Earth imagery (GeoTiff, jp2, ecw, etc.), Building footprints in polygon vector format (shapefile, kml, Geojson, etc.) for training
 * Imagery must be pan-sharpened, radiometrically consistent, cloud-free, etc. Building footprints must overlay accurately on imagery.
 
@@ -36,3 +39,8 @@ The benefit of geospatial machine learning is that every pixel is analyzed and t
 * See what possibilities there are for outputting vector components Nov 20 - Nov 27
 * Code freeze Nov 28
 * Prepare presentation Nov 28 - Dec 3
+
+**Resources (White papers, Git pages, Tutorials, etc.):**
+
+* Detecting population centers in Nigeria - http://gbdxstories.digitalglobe.com/building-detection/
+* Pool Detection Using Deep Learning - https://github.com/DigitalGlobe/mltools/tree/master/examples/polygon_classify_cnn
