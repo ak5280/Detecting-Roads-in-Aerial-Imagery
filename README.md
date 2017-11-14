@@ -44,3 +44,4 @@ The benefit of geospatial machine learning is that every pixel is analyzed and t
 
 * Detecting population centers in Nigeria - http://gbdxstories.digitalglobe.com/building-detection/
 * Pool Detection Using Deep Learning - https://github.com/DigitalGlobe/mltools/tree/master/examples/polygon_classify_cnn
+* Use Machine Learning to Create Building Heights in OSM - https://2017.stateofthemap.us/program/use-machine-learning-to-create-building-heights.html
