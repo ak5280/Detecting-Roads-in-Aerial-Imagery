@@ -1,4 +1,4 @@
-## Create Vector Building Footprints with Machine Learning
+## Predicting-Roads-in-Aerial-Imagery
 
 In the geospatial arena, machine learning focuses on the application of big data analytics to automate the extraction of specific information from geospatial data sets. The most common are imagery by airplane, UAV or satellite, which traditionally are analyzed manually to identify features, land use/land cover and changing conditions on the ground.
 
