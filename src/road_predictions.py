@@ -5,7 +5,8 @@ from keras.models import load_model
 import matplotlib.pyplot as plt
 import numpy as np
 import os
-from sklearn.metrics import confusion_matrix, classification_report, roc_curve, auc, roc_auc_score
+from sklearn.metrics import (accuracy_score, confusion_matrix,
+                            classification_report, roc_curve, auc, roc_auc_score)
 from sklearn import metrics
 
 def model_acc_score():
@@ -39,16 +40,19 @@ def boulder_results():
     y_true_bd = np.array([0]*1449 + [1]*816)
     y_pred_bd = boulder_probabilities >= 0.5
 
-    confusion_matrix(y_true_bd, y_pred_bd)
+    print("Accuracy score: ",accuracy_score(y_true_bd, y_pred_bd))
 
-    boulder_report = classification_report(y_true_bd, y_pred_bd)
-    print(boulder_report)
+    print("Confusion matrix:\n",confusion_matrix(y_true_bd, y_pred_bd))
 
-    roc_auc_score(y_true_bd, boulder_probabilities)
+    print("Classification report:\n",classification_report(y_true_bd, y_pred_bd))
 
+    print("AUC: ",roc_auc_score(y_true_bd, boulder_probabilities))
+
+    # calculate the false positive rate and true positive rate for all thresholds of the classification
     fpr, tpr, thresholds = metrics.roc_curve(y_true_bd, boulder_probabilities)
     auc = metrics.auc(fpr, tpr)
 
+    # ROC plot
     plt.title('Boulder - Receiver Operating Characteristic')
     plt.plot(fpr, tpr, 'darkorange', label = 'Area Under Curve = %0.2f' % auc)
     plt.legend(loc = 'lower right')
@@ -126,7 +130,7 @@ def yuma_results():
     yuma_test_gen = test_datagen.flow_from_directory(
             'data/test_yuma',
             target_size=(150, 150),
-            batch_size=32,
+            batch_size=batch_size,
             class_mode=('binary'),  # None => only data, no labels
             shuffle=False)  # False => keep data in same order as labels
 
@@ -136,17 +140,18 @@ def yuma_results():
     y_true_yuma = np.array([0]*8653 + [1]*6387)
     y_pred_yuma = yuma_probabilities >= 0.5
 
-    confusion_matrix(y_true_yuma, y_pred_yuma)
+    print("Accuracy score: ",accuracy_score(y_true_yuma, y_pred_yuma))
 
-    yuma_report = classification_report(y_true_yuma, y_pred_yuma)
-    print(yuma_report)
+    print("Confusion matrix:\n",confusion_matrix(y_true_yuma, y_pred_yuma))
 
-    roc_auc_score(y_true_yuma, yuma_probabilities)
+    print("Classification report:\n",classification_report(y_true_yuma, y_pred_yuma))
+
+    print("AUC: ",roc_auc_score(y_true_yuma, yuma_probabilities))
 
     # calculate the fpr and tpr for all thresholds of the classification
     fpr, tpr, thresholds = metrics.roc_curve(y_true_yuma, yuma_probabilities)
     auc = metrics.auc(fpr, tpr)
-
+    # ROC plot
     plt.title('Yuma - Receiver Operating Characteristic')
     plt.plot(fpr, tpr, 'darkorange', label = 'Area Under Curve = %0.2f' % auc)
     plt.legend(loc = 'lower right')
@@ -166,12 +171,13 @@ if __name__ == '__main__':
     validation_data_dir = 'data/validation'
     nb_train_samples = 9063 #5797+3266
     nb_validation_samples = 2265 #1449+816
+    batch_size = 32
 
     model = load_model('convnet.h5')
     # print(model.summary())
     test_datagen = ImageDataGenerator(rescale=1/255)
     # model_acc_score()
-    # boulder_results()
+    boulder_results()
     # yuma_not_road_pred()
     # yuma_road_pred()
-    yuma_results()
+    # yuma_results()
