@@ -9,34 +9,28 @@ The benefit of geospatial machine learning is that every pixel is analyzed and t
 
 **Data resources, what it looks like, and what kind of preprocessing to do:**
 
-* City of Boulder (https://bouldercolorado.gov/open-data/city-of-boulder-building-footprints/)
-* City of Bloomington, IN (https://catalog.data.gov/dataset/building-footprint-gis-data)
-* East View Geospatial (https://www.geospatialworld.net/news/east-view-geospatial-announces-training-data-library-geospatial-machine-learning/)
-* Geoscape (https://www.geoscape.com.au/get-geoscape/)
-* Data will consist of Ortho-rectified Earth imagery (GeoTiff, jp2, ecw, etc.), Building footprints in polygon vector format (shapefile, kml, Geojson, etc.) for training
-* Imagery must be pan-sharpened, radiometrically consistent, cloud-free, etc. Building footprints must overlay accurately on imagery.
+* City of Boulder (https://bouldercolorado.gov/open-data/boulder-street-centerlines/)
+* NAIP (https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/index)
+* Data will consist of Ortho-rectified aerial imagery (GeoTiff, jpeg), Street Centerlines in line vector format (shapefile, kml, GeoJson, etc.) for determining binary classification.
+* Imagery must be pan-sharpened, radiometrically consistent, cloud-free, etc. Street Centerlines must overlay accurately on imagery.
 
  **High level description of analysis:**
 
-* Transform Earth imagery into vector feature maps
-* Combine machine learning algorithms and remote sensing techniques and to automate feature extraction
-* Provide a digital representation of each building, comprising a two-dimensional building footprint
+* Combine machine learning algorithms and GIS applications to automate feature classification.
 
  **Tools to use:**
 
 * Deep learning with a Convolutional Neural Network (CNN)
-* EC2
 
  **Plans for presentation results:**
 
-* A nice README along with a Jupyter Notebook for code description
-* It might also be nice to build a blog/webpage too for future presentations/interviews
+* A nice README along with a Jupyter Notebook for code demonstration.
+* Google slides
 
 **High level timeline for project stages:**
 
 * Start gathering data ASAP
-* Begin investigating how to build CNNs (now) Nov 6 - Nov 20
-* See what possibilities there are for outputting vector components Nov 20 - Nov 27
+* Begin investigating relevant CNNs (now) Nov 6 - Nov 20
 * Code freeze Nov 28
 * Prepare presentation Nov 28 - Dec 3
 
@@ -44,4 +38,4 @@ The benefit of geospatial machine learning is that every pixel is analyzed and t
 
 * Detecting population centers in Nigeria - http://gbdxstories.digitalglobe.com/building-detection/
 * Pool Detection Using Deep Learning - https://github.com/DigitalGlobe/mltools/tree/master/examples/polygon_classify_cnn
-* Use Machine Learning to Create Building Heights in OSM - https://2017.stateofthemap.us/program/use-machine-learning-to-create-building-heights.html
+* The Keras blog - https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html
