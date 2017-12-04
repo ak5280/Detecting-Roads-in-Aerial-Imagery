@@ -1,0 +1,18 @@
+Accuracy score:  0.855629139073
+
+
+Confusion matrix:
+ [1307  142]
+ [ 185  631]
+
+
+Classification report:
+              precision    recall  f1-score   support
+
+          0       0.88      0.90      0.89      1449
+          1       0.82      0.77      0.79       816
+
+avg / total       0.85      0.86      0.85      2265
+
+
+AUC:  0.911683513985
