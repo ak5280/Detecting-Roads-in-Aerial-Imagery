@@ -27,6 +27,6 @@ The benefit of geospatial machine learning is that every pixel is analyzed and t
 **Resources (White papers, Git pages, Tutorials, etc.):**
 
 * Detecting population centers in Nigeria - http://gbdxstories.digitalglobe.com/building-detection/
-* Pool Detection Using Deep Learning - https://github.com/DigitalGlobe/mltools/tree/master/examples/polygon_classify_cnn
+* Pool Detection Using Deep Learning https://github.com/DigitalGlobe/mltools/tree/master/examples/polygon_classify_cnn
 * The Keras blog - https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html
 * Machines that can see: Convolutional Neural Networks - https://shafeentejani.github.io/2016-12-20/convolutional-neural-nets/
