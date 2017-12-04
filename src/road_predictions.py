@@ -21,7 +21,7 @@ def model_acc_score():
     print("Model %s: %.2f%%" % (model.metrics_names[1], scores[1]*100))
 
 
-# #### A note on test and validation data:
+# A note on test and validation data:
 # The Keras documentation uses three different sets of data: training data, validation data and test data.
 # Training data is used to optimize the model parameters. The validation data is used to make choices about
 # the meta-parameters, e.g. the number of epochs. After optimizing a model with optimal meta-parameters the
@@ -176,8 +176,8 @@ if __name__ == '__main__':
     model = load_model('convnet.h5')
     # print(model.summary())
     test_datagen = ImageDataGenerator(rescale=1/255)
-    # model_acc_score()
+    model_acc_score()
     boulder_results()
-    # yuma_not_road_pred()
-    # yuma_road_pred()
-    # yuma_results()
+    yuma_not_road_pred()
+    yuma_road_pred()
+    yuma_results()
